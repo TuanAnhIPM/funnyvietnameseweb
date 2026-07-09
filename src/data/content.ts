@@ -65,7 +65,7 @@ export const programs: Program[] = [
 export const outcomes = [
   {
     title: "Say it right the first time",
-    body: "Master all 6 Vietnamese tones through music, consonants, rhyme, and vowels — by learning to control your mouth, lips, and tongue with precision, so you're understood the first time, not the third.",
+    body: "Master all 6 Vietnamese tones through music, consonants, rhyme, vowels, and more — by learning to control your mouth, lips, and tongue with precision, so you're understood the first time, not the third.",
   },
   {
     title: "Build vocabulary that sticks",
