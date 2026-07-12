@@ -115,6 +115,11 @@ export const faqs = [
   },
 ];
 
+export const activePromo = {
+  code: "VIET30",
+  percent: 30,
+};
+
 export const contact = {
   email: "39trantu@gmail.com",
   whatsapp: "+84 944451122",

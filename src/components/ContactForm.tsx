@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState, type FormEvent } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import clsx from "clsx";
-import { Check, ChevronDown, Mail, MessageCircle, Send } from "lucide-react";
+import { Check, ChevronDown, Mail, MessageCircle, Send, Sparkles } from "lucide-react";
 import { Section, Eyebrow } from "./Section";
 import { Reveal } from "./Reveal";
-import { contact, programInterest, vietnameseLevels } from "../data/content";
+import { activePromo, contact, programInterest, vietnameseLevels } from "../data/content";
 
 const fieldClass =
   "w-full rounded-xl border border-ink/15 bg-paper px-4 py-3 text-sm text-ink placeholder:text-ink/40 focus:border-mint-400 focus:outline-none focus:ring-2 focus:ring-mint-200";
@@ -160,6 +160,11 @@ export function ContactForm() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="grid gap-4 rounded-2xl border border-ink/10 bg-paper-dim p-6 md:p-8">
+              <div className="flex items-center gap-2 rounded-xl bg-mint-50 px-4 py-3 text-sm font-medium text-mint-700">
+                <Sparkles size={16} className="shrink-0 text-mint-500" />
+                {activePromo.percent}% off right now — code{" "}
+                <span className="font-semibold">{activePromo.code}</span> is already applied below.
+              </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <input name="name" required placeholder="Full name" className={fieldClass} />
                 <input
@@ -204,7 +209,12 @@ export function ContactForm() {
                   {errors.program && <p className="mt-1.5 text-xs text-red-500">Please select a program</p>}
                 </div>
               </div>
-              <input name="discountCode" placeholder="Discount code (if any)" className={fieldClass} />
+              <input
+                name="discountCode"
+                defaultValue={activePromo.code}
+                placeholder="Discount code (if any)"
+                className={fieldClass}
+              />
               <textarea name="note" rows={3} placeholder="Anything else we should know?" className={fieldClass} />
 
               <button
