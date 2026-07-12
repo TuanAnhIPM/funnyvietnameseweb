@@ -62,6 +62,21 @@ export const programs: Program[] = [
   },
 ];
 
+export const valueProps = [
+  {
+    title: "Taught by someone obsessed with this, not just teaching it",
+    body: "Trân isn't running through a generic script — she's genuinely fascinated by how Vietnamese works, and that shows up as real energy and attention in every single lesson, not a rehearsed routine.",
+  },
+  {
+    title: "A method built to make you sound native, not just understood",
+    body: "Most courses stop at 'good enough.' This one trains your mouth and ear the way a native speaker's were trained — mastering all 6 tones from day one — so you come across as fluent, not just passable.",
+  },
+  {
+    title: "Small groups, real attention",
+    body: "Capped at 10 people per group, so you're never just a face in the crowd — the price reflects real 1-on-1 correction, not a lecture hall.",
+  },
+];
+
 export const outcomes = [
   {
     title: "Say it right the first time",

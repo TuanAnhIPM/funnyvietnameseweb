@@ -1,6 +1,9 @@
+import { Flame, Target, Users } from "lucide-react";
 import { Section, Eyebrow } from "./Section";
 import { Reveal } from "./Reveal";
-import { programs } from "../data/content";
+import { programs, valueProps } from "../data/content";
+
+const valuePropIcons = [Flame, Target, Users];
 
 export function Pricing() {
   return (
@@ -11,6 +14,23 @@ export function Pricing() {
           Simple pricing, billed monthly. First lesson's on us.
         </h2>
       </Reveal>
+
+      <div className="mt-10 grid gap-5 sm:grid-cols-3">
+        {valueProps.map((v, i) => {
+          const Icon = valuePropIcons[i];
+          return (
+            <Reveal key={v.title} delay={i * 0.06}>
+              <div className="h-full rounded-2xl border border-mint-100 bg-mint-50/60 p-6">
+                <Icon size={20} className="text-mint-500" />
+                <h3 className="mt-3 font-serif text-lg font-semibold leading-snug text-ink">
+                  {v.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink/70">{v.body}</p>
+              </div>
+            </Reveal>
+          );
+        })}
+      </div>
 
       <div className="mt-12 space-y-10">
         {programs.map((p, i) => (
